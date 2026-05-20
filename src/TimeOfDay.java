@@ -1,4 +1,4 @@
-public class TimeOfDay {
+public class TimeOfDay implements Comparable<TimeOfDay> {
 
   //часы (от 0 до 23)
   private int hours;
@@ -16,5 +16,10 @@ public class TimeOfDay {
 
   public int getMinutes() {
     return minutes;
+  }
+
+  @Override
+  public int compareTo(TimeOfDay o) {
+    return (this.hours -o.hours) + (this.minutes - o.minutes);
   }
 }

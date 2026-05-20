@@ -1,3 +1,6 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 public class TimetableTest {
@@ -14,8 +17,17 @@ public class TimetableTest {
     timetable.addNewTrainingSession(singleTrainingSession);
 
     //Проверить, что за понедельник вернулось одно занятие
+    ArrayList<TrainingSession> mondaySessions = timetable.getTrainingSessionsForDay(
+        DayOfWeek.MONDAY);
+    assertEquals(1, mondaySessions.size());
+    //assertEquals(singleTrainingSession, mondaySessions.get(0));
     //Проверить, что за вторник не вернулось занятий
+    ArrayList<TrainingSession> tuesdaySessions = timetable.getTrainingSessionsForDay(
+        DayOfWeek.TUESDAY);
+    assertEquals(0, tuesdaySessions.size());
+    //assertEquals(singleTrainingSession, tuesdaySessions.get(0));
   }
+
 
   @Test
   void testGetTrainingSessionsForDayMultipleSessions() {
