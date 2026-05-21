@@ -55,10 +55,11 @@ public class Timetable {
       return new ArrayList<>();
     }
 
-    ArrayList<TrainingSession> result = new ArrayList<>();
-    for (ArrayList<TrainingSession> sessions : daySchedule.values()) {
-      result.addAll(sessions);
-    }
+    ArrayList<TrainingSession> result = daySchedule.get(timeOfDay);
+    //for (ArrayList<TrainingSession> sessions : daySchedule.values()) {
+      //if(daySchedule.)
+      //result.addAll(sessions);
+    //}
     return result;
   }
 
